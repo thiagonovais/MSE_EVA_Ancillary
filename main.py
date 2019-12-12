@@ -43,6 +43,18 @@ def Assignment1_3_a_Plot(df_data, data_column):
         fig.savefig('./Day1/1_3a.png', bbox_inches='tight')
         plt.close(fig)
 
+        fig, ax = plt.subplots()
+
+        df_data[data_column].plot.hist(bins=100, ax=ax, linewidth=1)
+        plt.title('Frequency over time')
+        plt.ylabel('Frequency in Hz')
+        plt.xlabel('Time')
+        plt.grid(which='major', axis='both', alpha=0.6)
+        plt.grid(which='minor', axis='both', alpha=0.4)
+        fig.savefig('./Day1/1_3a_Hist.png', bbox_inches='tight')
+        plt.close(fig)
+
+
 def Assignment1_3_b(df_data, data_column):
         print('1.3 b) Calculation')
         sync_time_in_seconds = 1./50.
@@ -68,7 +80,7 @@ def Assignment1_3_b_Plot(df_data):
 def Characteristic(frequency):
         nominal_frequency = 50.
 
-        delta_frequency = nominal_frequency - frequency
+        delta_frequency = frequency - nominal_frequency
 
         absolute_delta = abs(delta_frequency)
 
@@ -304,22 +316,23 @@ data_column = 'Frequency in Hz'
 
 
 #Assignment1_3_a(df_data,data_column)
-#Assignment1_3_a_Plot(df_data,data_column)
+Assignment1_3_a_Plot(df_data,data_column)
 
 #Assignment1_3_b(df_data,data_column)
-#Assignment1_3_b_Plot(df_data)
+Assignment1_3_b_Plot(df_data)
 
 #Assignment1_3_c(df_data,data_column)
-#Assignment1_3_c_Plot(df_data)
+Assignment1_3_c_Plot(df_data)
 
 #Assignment1_3_d(df_data)
-#Assignment1_3_d_Plot(df_data)
+Assignment1_3_d_Plot(df_data)
 
 #Assignment1_3_e(df_data)
 
 #Assignment1_3_f(df_data,data_column)
-#Assignment_3_f_Plot(df_data)
+Assignment_3_f_Plot(df_data)
 
 #Assignment1_3_g(df_data,data_column)
+
 Assignment1_3_g_ANOTHER_VIEW(df_data,data_column)
 #plt.show()
